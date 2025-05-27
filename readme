@@ -1,0 +1,33 @@
+# Doğrulama Uygulaması
+
+## Açıklama
+
+Bu uygulama, kullanıcı girdilerini önceden tanımlanmış kurallara göre doğrulamak için tasarlanmıştır. Veri bütünlüğünü ve tutarlılığını sağlamaya yardımcı olur.
+
+## Özellikler
+
+*   [Temel özellikleri listeleyin, örn. E-posta doğrulaması, Parola gücü kontrolü vb.]
+*   [Başka bir özellik]
+*   [Ve bir diğeri]
+
+## Kurulum
+
+1.  Depoyu klonlayın:
+    ```bash
+    git clone <repository-url>
+    ```
+2.  Proje dizinine gidin:
+    ```bash
+    cd validationApp
+    ```
+3.  Bağımlılıkları yükleyin (varsa):
+    ```bash
+    # Node.js/npm için örnek
+    # npm install
+    # Python/pip için örnek
+    # pip install -r requirements.txt
+    ```
+
+## Kullanım
+
+Uygulamanın nasıl çalıştırılacağına ve kullanılacağına dair talimatlar sağlayın.
