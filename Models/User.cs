@@ -1,9 +1,5 @@
-
-
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
-
-public class User
+public class UserModel
 {
     [Display(Name = "Email Adresi")]
     [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
