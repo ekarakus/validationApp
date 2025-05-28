@@ -1,7 +1,8 @@
 @{
     ViewData["Title"] = "Profil";
 }
-<form asp-action="Profil" asp-controller="Home" method="post">
+<form enctype="multipart/form-data"
+ asp-action="Profil" asp-controller="Home" method="post">
     <input id="=dosya" type="file" name="dosya" />
     <label for="dosya">Profil fotoğrafınızı seçin</label>
     <button type="submit">Gönder</button>
