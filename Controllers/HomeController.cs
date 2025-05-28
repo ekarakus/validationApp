@@ -17,7 +17,23 @@ public class HomeController : Controller
     {
         return View();
     }
-
+[HttpPost]
+    public IActionResult Index(UserModel m)
+    {
+        if (ModelState.IsValid)
+        {
+            // Model geçerli ise, burada işlemler yapılabilir.
+            // Örneğin, veritabanına kaydetme işlemi.
+            ViewBag.Message = "Kullanıcı başarıyla kaydedildi.";
+            return View();
+        }
+        else
+        {
+            // Model geçerli değilse, hata mesajlarını göster.
+            ViewBag.Message = "Lütfen hataları düzeltin.";
+        }
+        return View();
+    }
     public IActionResult Privacy()
     {
         return View();
