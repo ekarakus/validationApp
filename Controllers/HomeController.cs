@@ -17,7 +17,8 @@ public class HomeController : Controller
     {
         return View();
     }
-[HttpPost]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Index(UserModel m)
     {
         if (ModelState.IsValid)
@@ -43,5 +44,16 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    [HttpGet]
+    public IActionResult Profil()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Profil(IFormFile dosya)
+    {
+        return View();
     }
 }

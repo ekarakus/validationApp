@@ -12,9 +12,11 @@ public class UserModel
     [MinLength(6, ErrorMessage = "Kullanıcı adı en az 2 karakter olmalıdır.")]
     [Required(ErrorMessage = "Şifre alanı boş bırakılamaz.")]
     [Display(Name = "Şifre")]
+   [DataType(DataType.Password)]
     public string Password { get; set; }
 
     [Display(Name = "Şifre Tekrarı")]
+    [DataType(DataType.Password)]
     [Compare("Password", ErrorMessage = "Şifreler eşleşmiyor.")]
     [Required(ErrorMessage = "Şifre onayı alanı boş bırakılamaz.")]
     public string PasswordConfirm { get; set; }
