@@ -1,8 +1,13 @@
 @{
     ViewData["Title"] = "Profil";
 }
-<form enctype="multipart/form-data"
- asp-action="Profil" asp-controller="Home" method="post">
+@{
+    if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <div class="alert alert-info">@ViewBag.Message</div>
+    }
+}
+<form enctype="multipart/form-data" asp-action="Profil" asp-controller="Home" method="post">
     <input id="=dosya" type="file" name="dosya" />
     <label for="dosya">Profil fotoğrafınızı seçin</label>
     <button type="submit">Gönder</button>

@@ -54,6 +54,27 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Profil(IFormFile dosya)
     {
+        // dosya tipi jpg veya png olanları kabul et
+        if (dosya != null && (dosya.ContentType == "image/jpeg" || dosya.ContentType == "image/png"))
+        {
+            //dosya boyutu en fazla 5 MB olmalı
+            if (dosya.Length > 5 * 1024 * 1024)
+            {
+                ViewBag.Message = "Dosya boyutu en fazla 5 MB olmalıdır.";
+                return View();
+            }
+            //dosyayı kaydet
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", dosya.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                dosya.CopyTo(stream);
+            }
+            ViewBag.Message = "Dosya başarıyla yüklendi.";
+        }
+        else
+        {
+            ViewBag.Message = "Lütfen geçerli bir resim dosyası yükleyin (jpg veya png).";
+        }
         return View();
     }
 }
